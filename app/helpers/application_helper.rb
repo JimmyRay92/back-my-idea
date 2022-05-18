@@ -1,4 +1,7 @@
 module ApplicationHelper
+  def author_of(resource)
+    user_signed_in? && resource.user_id == current_user.id
+  end
   def flash_classes(flash_type)
     flash_base = "px-2 py-4 mx-auto font-sans font-medium text-center text-white"
     {
