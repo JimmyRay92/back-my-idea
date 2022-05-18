@@ -77,3 +77,5 @@ gem "name_of_person", "~> 1.1", ">= 1.1.1"
 gem "cssbundling-rails"
 gem "pay", "~> 3.0"
 gem "stripe", ">= 2.8", "< 6.0"
+
+gem "tailwindcss-rails", "~> 2.0"

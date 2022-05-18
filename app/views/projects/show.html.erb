@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<%= render @project %>
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
+<p>
+  <strong>Donation goal:</strong>
+  <%= @project.donation_goal %>
+</p>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
-</div>
+<p>
+  <strong>User:</strong>
+  <%= @project.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
