@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_19_024703) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_19_064208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -157,6 +157,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_19_024703) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "current_donation_amount", default: 0
+    t.datetime "expires_at", default: "2022-06-18 03:49:54"
+    t.string "status", default: "active"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -171,6 +174,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_19_024703) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "uid"
+    t.string "provider"
+    t.string "access_code"
+    t.string "publishable_key"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
